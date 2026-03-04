@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>施設紹介｜SHIMA NO IE - 島の家</title>
+  <meta name="description" content="島の家の施設紹介。フォトギャラリー・間取り図・設備一覧をご覧ください。">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- ヘッダー -->
+  <header class="site-header solid" id="site-header">
+    <div class="header-inner">
+      <a href="index.html" class="site-logo">
+        <span class="site-logo__en">SHIMA NO IE</span>
+        <span class="site-logo__jp">島 の 家</span>
+      </a>
+      <nav class="site-nav">
+        <a href="facility.html" class="active">施設紹介</a>
+        <a href="stay-info.html">宿泊情報</a>
+        <a href="access.html">アクセス</a>
+        <a href="about.html">運営者情報</a>
+        <a href="contact.html" class="nav-cta">予約・お問い合わせ</a>
+      </nav>
+      <button class="hamburger" id="hamburger" aria-label="メニューを開く">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+  <nav class="mobile-nav" id="mobile-nav">
+    <a href="facility.html">施設紹介</a>
+    <a href="stay-info.html">宿泊情報</a>
+    <a href="access.html">アクセス</a>
+    <a href="about.html">運営者情報</a>
+    <a href="contact.html">予約・お問い合わせ</a>
+  </nav>
+
+  <!-- ページヒーロー -->
+  <div class="page-hero">
+    <img class="page-hero__bg" src="https://picsum.photos/1920/600?random=30" alt="施設外観">
+    <div class="page-hero__content">
+      <span class="page-hero__label">Facility</span>
+      <h1 class="page-hero__title">施設紹介</h1>
+    </div>
+  </div>
+
+  <!-- ============================================================
+       フォトギャラリー
+       ============================================================ -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header fade-in">
+        <span class="section-label">Gallery</span>
+        <h2 class="section-title">フォトギャラリー</h2>
+        <p class="section-subtitle">
+          奄美の自然素材と和の意匠が調和した、くつろぎの空間をご覧ください。
+        </p>
+      </div>
+
+      <!-- メインギャラリー -->
+      <div class="gallery-grid fade-in" style="margin-bottom:12px;">
+        <div class="gallery-item">
+          <img src="https://picsum.photos/800/600?random=31" alt="ヴィラ外観">
+        </div>
+        <div class="gallery-item">
+          <img src="https://picsum.photos/400/300?random=32" alt="リビングルーム">
+        </div>
+        <div class="gallery-item">
+          <img src="https://picsum.photos/400/300?random=33" alt="ダイニング">
+        </div>
+        <div class="gallery-item">
+          <img src="https://picsum.photos/400/300?random=34" alt="キッチン">
+        </div>
+        <div class="gallery-item">
+          <img src="https://picsum.photos/400/300?random=35" alt="テラス">
+        </div>
+      </div>
+
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px;" class="fade-in">
+        <div class="gallery-item">
+          <img src="https://picsum.photos/400/300?random=36" alt="メイン寝室">
+        </div>
+        <div class="gallery-item">
+          <img src="https://picsum.photos/400/300?random=37" alt="バスルーム">
+        </div>
+        <div class="gallery-item">
+          <img src="https://picsum.photos/400/300?random=38" alt="中庭">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       特徴（テキスト＋画像）
+       ============================================================ -->
+  <section class="section section--gray">
+    <div class="container">
+      <div class="section-header fade-in">
+        <span class="section-label">Features</span>
+        <h2 class="section-title">各部屋の特徴</h2>
+      </div>
+
+      <div class="feature-row fade-in">
+        <div class="feature-img">
+          <img src="https://picsum.photos/700/525?random=41" alt="リビング・ダイニング">
+        </div>
+        <div class="feature-text">
+          <span class="feature-text__label">Living & Dining</span>
+          <h3 class="feature-text__title">開放的なリビング・<br>ダイニング</h3>
+          <p class="feature-text__body">
+            天井高3.2mの大空間に、地元の木材を使ったテーブルと畳の縁台を配置。大きな窓から差し込む光が室内を満たし、朝の目覚めから穏やかな時間が始まります。最大8名まで一緒に食事が楽しめます。
+          </p>
+        </div>
+      </div>
+
+      <div class="feature-row feature-row--reverse fade-in">
+        <div class="feature-img">
+          <img src="https://picsum.photos/700/525?random=42" alt="テラス">
+        </div>
+        <div class="feature-text">
+          <span class="feature-text__label">Terrace</span>
+          <h3 class="feature-text__title">プライベートテラスで<br>島の空気を感じる</h3>
+          <p class="feature-text__body">
+            広々としたウッドデッキのテラスには、ハンモックとアウトドアチェアを完備。木漏れ日の下でお昼寝したり、夕暮れをのんびり眺めたり。島の自然と同化するような、至福のひとときを過ごせます。
+          </p>
+        </div>
+      </div>
+
+      <div class="feature-row fade-in">
+        <div class="feature-img">
+          <img src="https://picsum.photos/700/525?random=43" alt="寝室">
+        </div>
+        <div class="feature-text">
+          <span class="feature-text__label">Bedroom</span>
+          <h3 class="feature-text__title">上質なベッドで、<br>深い眠りを。</h3>
+          <p class="feature-text__body">
+            シモンズのポケットコイルマットレスを採用した寝室。島の民芸織物「大島紬」をモチーフにしたクッションと共に、ゆったりとした眠りをご提供します。遮光カーテンで、朝の光も調節できます。
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       間取り図
+       ============================================================ -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header fade-in">
+        <span class="section-label">Floor Plan</span>
+        <h2 class="section-title">間取り図</h2>
+      </div>
+      <div class="fade-in" style="max-width:700px;margin:0 auto;">
+        <img
+          src="https://picsum.photos/700/500?random=50"
+          alt="島の家 間取り図"
+          style="width:100%;border:1px solid var(--color-border);"
+        >
+        <p style="text-align:center;font-size:0.8rem;color:var(--color-accent);margin-top:12px;">
+          ※ 間取り図はイメージです。実際の間取りとは異なる場合があります。
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       設備一覧
+       ============================================================ -->
+  <section class="section section--gray">
+    <div class="container">
+      <div class="section-header fade-in">
+        <span class="section-label">Equipment</span>
+        <h2 class="section-title">設備一覧</h2>
+      </div>
+
+      <div class="fade-in" style="max-width:860px;margin:0 auto;">
+        <div class="amenity-section">
+          <h3 class="amenity-section__title">▎ リビング・ダイニング</h3>
+          <ul class="amenity-list">
+            <li>ソファ</li>
+            <li>ダイニングテーブル＆チェア（8脚）</li>
+            <li>4Kテレビ（55インチ）</li>
+            <li>Bluetooth スピーカー</li>
+            <li>冷暖房エアコン</li>
+            <li>サーキュレーター</li>
+          </ul>
+        </div>
+        <div class="amenity-section">
+          <h3 class="amenity-section__title">▎ キッチン</h3>
+          <ul class="amenity-list">
+            <li>IH クッキングヒーター</li>
+            <li>電子レンジ・トースター</li>
+            <li>冷蔵庫（350L）</li>
+            <li>食器・調理器具一式</li>
+            <li>コーヒーメーカー</li>
+            <li>浄水器</li>
+            <li>食洗機</li>
+            <li>炊飯器</li>
+          </ul>
+        </div>
+        <div class="amenity-section">
+          <h3 class="amenity-section__title">▎ 寝室</h3>
+          <ul class="amenity-list">
+            <li>ダブルベッド ×2</li>
+            <li>シングルベッド ×2</li>
+            <li>収納クローゼット</li>
+            <li>全身鏡</li>
+            <li>冷暖房エアコン</li>
+            <li>USB コンセント</li>
+          </ul>
+        </div>
+        <div class="amenity-section">
+          <h3 class="amenity-section__title">▎ バスルーム・トイレ</h3>
+          <ul class="amenity-list">
+            <li>浴室（バスタブあり）</li>
+            <li>シャワー</li>
+            <li>ウォシュレット付きトイレ</li>
+            <li>洗面台（ダブルシンク）</li>
+            <li>ドライヤー</li>
+            <li>洗濯機・乾燥機</li>
+          </ul>
+        </div>
+        <div class="amenity-section">
+          <h3 class="amenity-section__title">▎ テラス・屋外</h3>
+          <ul class="amenity-list">
+            <li>ウッドデッキ</li>
+            <li>ハンモック</li>
+            <li>アウトドアチェア</li>
+            <li>BBQ グリル（要予約）</li>
+            <li>屋外シャワー</li>
+            <li>駐車場（2台）</li>
+          </ul>
+        </div>
+        <div class="amenity-section">
+          <h3 class="amenity-section__title">▎ その他</h3>
+          <ul class="amenity-list">
+            <li>Wi-Fi（光回線）</li>
+            <li>自転車（2台）</li>
+            <li>島の観光マップ・資料</li>
+            <li>救急セット</li>
+          </ul>
+        </div>
+      </div>
+
+      <div style="text-align:center;margin-top:48px;" class="fade-in">
+        <a href="contact.html" class="btn btn--dark">予約・お問い合わせ</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- フッター -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <div class="footer-brand__logo">
+            <span class="footer-brand__en">SHIMA NO IE</span>
+            <span class="footer-brand__jp">島 の 家</span>
+          </div>
+          <p class="footer-brand__text">奄美大島の自然に囲まれた<br>完全プライベートのヴィラ</p>
+        </div>
+        <div class="footer-nav">
+          <p class="footer-nav__title">Navigation</p>
+          <div class="footer-nav__links">
+            <a href="facility.html">施設紹介</a>
+            <a href="stay-info.html">宿泊情報</a>
+            <a href="access.html">アクセス</a>
+            <a href="contact.html">予約・お問い合わせ</a>
+          </div>
+        </div>
+        <div class="footer-nav">
+          <p class="footer-nav__title">Information</p>
+          <div class="footer-nav__links">
+            <a href="about.html">運営者情報</a>
+            <a href="about.html#privacy">プライバシーポリシー</a>
+            <a href="about.html#law">特定商取引法に基づく表記</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <small>&copy; 2025 SHIMA NO IE. All Rights Reserved.</small>
+        <a href="about.html">運営者情報</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

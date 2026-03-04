@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>予約・お問い合わせ｜SHIMA NO IE - 島の家</title>
+  <meta name="description" content="島の家へのご予約・お問い合わせはこちら。フォーム・LINE・メール・電話でお気軽にどうぞ。">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- ヘッダー -->
+  <header class="site-header solid" id="site-header">
+    <div class="header-inner">
+      <a href="index.html" class="site-logo">
+        <span class="site-logo__en">SHIMA NO IE</span>
+        <span class="site-logo__jp">島 の 家</span>
+      </a>
+      <nav class="site-nav">
+        <a href="facility.html">施設紹介</a>
+        <a href="stay-info.html">宿泊情報</a>
+        <a href="access.html">アクセス</a>
+        <a href="about.html">運営者情報</a>
+        <a href="contact.html" class="nav-cta active">予約・お問い合わせ</a>
+      </nav>
+      <button class="hamburger" id="hamburger" aria-label="メニューを開く">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+  <nav class="mobile-nav" id="mobile-nav">
+    <a href="facility.html">施設紹介</a>
+    <a href="stay-info.html">宿泊情報</a>
+    <a href="access.html">アクセス</a>
+    <a href="about.html">運営者情報</a>
+    <a href="contact.html">予約・お問い合わせ</a>
+  </nav>
+
+  <!-- ページヒーロー -->
+  <div class="page-hero">
+    <img class="page-hero__bg" src="https://picsum.photos/1920/600?random=80" alt="お問い合わせ">
+    <div class="page-hero__content">
+      <span class="page-hero__label">Contact & Reservation</span>
+      <h1 class="page-hero__title">予約・お問い合わせ</h1>
+    </div>
+  </div>
+
+  <!-- ============================================================
+       お問い合わせメイン
+       ============================================================ -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header fade-in">
+        <span class="section-label">Contact</span>
+        <h2 class="section-title">ご連絡方法</h2>
+        <p class="section-subtitle">
+          空室状況・料金・その他ご不明な点はお気軽にご連絡ください。<br>
+          通常 24時間以内にご返信いたします。
+        </p>
+      </div>
+
+      <div class="contact-layout fade-in">
+
+        <!-- 連絡先情報 -->
+        <div class="contact-info">
+          <div class="contact-info__item">
+            <div class="contact-info__icon">☎</div>
+            <div>
+              <p class="contact-info__label">お電話</p>
+              <p class="contact-info__value">
+                <a href="tel:0997000000" style="color:var(--color-gold);font-size:1.1rem;">0997-00-0000</a>
+              </p>
+              <p style="font-size:0.78rem;color:var(--color-accent);margin-top:4px;">
+                受付時間：9:00〜20:00（年中無休）
+              </p>
+            </div>
+          </div>
+
+          <div class="contact-info__item">
+            <div class="contact-info__icon">✉</div>
+            <div>
+              <p class="contact-info__label">メール</p>
+              <p class="contact-info__value">
+                <a href="mailto:info@shimanoie-amami.com" style="color:var(--color-gold);font-size:0.9rem;word-break:break-all;">
+                  info@shimanoie-amami.com
+                </a>
+              </p>
+              <p style="font-size:0.78rem;color:var(--color-accent);margin-top:4px;">
+                24時間受付（返信は翌営業日）
+              </p>
+            </div>
+          </div>
+
+          <div class="contact-info__item">
+            <div class="contact-info__icon" style="color:var(--color-line);border-color:var(--color-line);">L</div>
+            <div>
+              <p class="contact-info__label">LINE公式アカウント</p>
+              <p style="font-size:0.82rem;color:var(--color-accent);margin-bottom:12px;">
+                LINEでのお問い合わせが最も迅速です。<br>
+                下のボタンから友だち追加してください。
+              </p>
+              <a href="https://lin.ee/xxxxxxx" target="_blank" rel="noopener noreferrer" class="btn--line">
+                <span style="font-weight:bold;font-size:1rem;">L</span>
+                LINE で問い合わせる
+              </a>
+            </div>
+          </div>
+
+          <div style="margin-top:8px;padding:20px;background:var(--color-light-gray);border:1px solid var(--color-border);font-size:0.8rem;color:var(--color-accent);line-height:1.9;">
+            <strong style="color:var(--color-text);display:block;margin-bottom:6px;">▎ 一休.com からのご予約も承ります</strong>
+            一休.com の掲載ページからもご予約いただけます。<br>
+            掲載準備中のため、まずは公式サイトよりお問い合わせください。
+          </div>
+        </div>
+
+        <!-- お問い合わせフォーム -->
+        <div>
+          <form id="contact-form" novalidate>
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label" for="name">
+                  お名前<span class="required">必須</span>
+                </label>
+                <input
+                  class="form-input"
+                  type="text"
+                  id="name"
+                  name="name"
+                  placeholder="山田 太郎"
+                  required
+                >
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="kana">
+                  ふりがな
+                </label>
+                <input
+                  class="form-input"
+                  type="text"
+                  id="kana"
+                  name="kana"
+                  placeholder="やまだ たろう"
+                >
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="email">
+                メールアドレス<span class="required">必須</span>
+              </label>
+              <input
+                class="form-input"
+                type="email"
+                id="email"
+                name="email"
+                placeholder="example@email.com"
+                required
+              >
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="tel">電話番号</label>
+              <input
+                class="form-input"
+                type="tel"
+                id="tel"
+                name="tel"
+                placeholder="090-0000-0000"
+              >
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label" for="checkin">
+                  チェックイン希望日<span class="required">必須</span>
+                </label>
+                <input
+                  class="form-input"
+                  type="date"
+                  id="checkin"
+                  name="checkin"
+                  required
+                >
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="checkout">
+                  チェックアウト希望日<span class="required">必須</span>
+                </label>
+                <input
+                  class="form-input"
+                  type="date"
+                  id="checkout"
+                  name="checkout"
+                  required
+                >
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="guests">ご利用人数</label>
+              <select class="form-select" id="guests" name="guests">
+                <option value="">選択してください</option>
+                <option value="1">1名</option>
+                <option value="2">2名</option>
+                <option value="3">3名</option>
+                <option value="4">4名</option>
+                <option value="5">5名</option>
+                <option value="6">6名</option>
+                <option value="7">7名（要相談）</option>
+                <option value="8">8名（要相談）</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="message">
+                ご質問・ご要望<span class="required">必須</span>
+              </label>
+              <textarea
+                class="form-textarea"
+                id="message"
+                name="message"
+                placeholder="ご旅行のご予定、ご質問などをご自由にお書きください。"
+                required
+              ></textarea>
+            </div>
+
+            <div style="margin-bottom:24px;font-size:0.78rem;color:var(--color-accent);line-height:1.8;">
+              ご入力いただいた個人情報は、お問い合わせへの回答のみに使用します。
+              詳しくは<a href="about.html#privacy" style="color:var(--color-gold);">プライバシーポリシー</a>をご確認ください。
+            </div>
+
+            <button type="submit" class="btn btn--filled" style="width:100%;justify-content:center;padding:16px;">
+              送信する
+            </button>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- 送信完了モーダル -->
+  <div class="modal-overlay" id="modal-overlay">
+    <div class="modal-box">
+      <div class="modal-icon">✓</div>
+      <h2 class="modal-title">お問い合わせを受け付けました</h2>
+      <p class="modal-text">
+        内容を確認のうえ、24時間以内にご返信いたします。<br>
+        しばらくお待ちください。
+      </p>
+      <button class="btn btn--dark" onclick="closeModal()" style="width:100%;justify-content:center;">
+        閉じる
+      </button>
+    </div>
+  </div>
+
+  <!-- フッター -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <div class="footer-brand__logo">
+            <span class="footer-brand__en">SHIMA NO IE</span>
+            <span class="footer-brand__jp">島 の 家</span>
+          </div>
+          <p class="footer-brand__text">奄美大島の自然に囲まれた<br>完全プライベートのヴィラ</p>
+        </div>
+        <div class="footer-nav">
+          <p class="footer-nav__title">Navigation</p>
+          <div class="footer-nav__links">
+            <a href="facility.html">施設紹介</a>
+            <a href="stay-info.html">宿泊情報</a>
+            <a href="access.html">アクセス</a>
+            <a href="contact.html">予約・お問い合わせ</a>
+          </div>
+        </div>
+        <div class="footer-nav">
+          <p class="footer-nav__title">Information</p>
+          <div class="footer-nav__links">
+            <a href="about.html">運営者情報</a>
+            <a href="about.html#privacy">プライバシーポリシー</a>
+            <a href="about.html#law">特定商取引法に基づく表記</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <small>&copy; 2025 SHIMA NO IE. All Rights Reserved.</small>
+        <a href="about.html">運営者情報</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
