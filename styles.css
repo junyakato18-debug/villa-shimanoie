@@ -1230,3 +1230,41 @@ ul, ol {
     grid-template-columns: 1fr;
   }
 }
+
+/* ============================================
+   奄美大島の自然セクション
+   ============================================ */
+.nature-images {
+  display: flex;
+  gap: 40px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 40px;
+}
+
+.nature-item {
+  flex: 1;
+  min-width: 250px;
+  text-align: center;
+}
+
+.nature-item img {
+  width: 100%;
+  height: auto;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  margin-bottom: 16px;
+}
+
+.nature-item__caption {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: var(--color-text);
+}
+
+@media (max-width: 768px) {
+  .nature-images {
+    flex-direction: column;
+    align-items: center;
+  }
+}
