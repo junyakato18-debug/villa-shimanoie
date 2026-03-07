@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>奄美ニュース｜SHIMA NO IE 島の家</title>
+  <meta name="description" content="奄美大島の最新観光情報・イベント情報をお届けします。世界自然遺産の島の旬なニュースをチェックして、旅の計画にお役立てください。">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* ---- ニュースページ固有スタイル ---- */
+
+    .news-hero {
+      background-color: var(--color-dark);
+      padding: calc(var(--header-h) + 60px) 0 60px;
+      text-align: center;
+      color: var(--color-white);
+    }
+    .news-hero__label {
+      display: block;
+      font-family: var(--font-serif);
+      font-size: 0.85rem;
+      letter-spacing: 0.2em;
+      color: var(--color-gold-light);
+      margin-bottom: 12px;
+    }
+    .news-hero__title {
+      font-family: var(--font-sans);
+      font-size: 2rem;
+      font-weight: 300;
+      letter-spacing: 0.1em;
+      margin-bottom: 12px;
+    }
+    .news-hero__sub {
+      font-size: 0.875rem;
+      color: rgba(255,255,255,0.65);
+      letter-spacing: 0.05em;
+    }
+
+    /* ---- 週セクション ---- */
+    .news-week {
+      margin-bottom: 64px;
+    }
+    .news-week__heading {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 24px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--color-border);
+    }
+    .news-week__heading h2 {
+      font-family: var(--font-serif);
+      font-size: 1.1rem;
+      font-weight: 400;
+      letter-spacing: 0.1em;
+      color: var(--color-accent);
+    }
+    .news-week__heading::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--color-border);
+    }
+
+    /* ---- ニュースカード ---- */
+    .news-list {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+    .news-card {
+      display: grid;
+      grid-template-columns: 90px 1fr;
+      gap: 20px;
+      padding: 20px;
+      background: var(--color-white);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius);
+      transition: box-shadow var(--transition);
+    }
+    .news-card:hover {
+      box-shadow: var(--shadow);
+    }
+    .news-card__date {
+      text-align: center;
+      padding-top: 4px;
+    }
+    .news-card__date-month {
+      display: block;
+      font-family: var(--font-serif);
+      font-size: 0.75rem;
+      letter-spacing: 0.1em;
+      color: var(--color-gold);
+      margin-bottom: 2px;
+    }
+    .news-card__date-day {
+      display: block;
+      font-family: var(--font-serif);
+      font-size: 2rem;
+      font-weight: 300;
+      line-height: 1;
+      color: var(--color-text);
+    }
+    .news-card__date-year {
+      display: block;
+      font-size: 0.7rem;
+      color: #999;
+      margin-top: 4px;
+    }
+    .news-card__body {}
+    .news-card__tag {
+      display: inline-block;
+      font-size: 0.7rem;
+      letter-spacing: 0.08em;
+      padding: 2px 8px;
+      border: 1px solid var(--color-gold-light);
+      color: var(--color-gold);
+      border-radius: 2px;
+      margin-bottom: 8px;
+    }
+    .news-card__title {
+      font-size: 1rem;
+      font-weight: 500;
+      line-height: 1.6;
+      margin-bottom: 8px;
+      color: var(--color-text);
+    }
+    .news-card__summary {
+      font-size: 0.875rem;
+      line-height: 1.7;
+      color: #666;
+      margin-bottom: 12px;
+    }
+    .news-card__link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.8rem;
+      color: var(--color-gold);
+      letter-spacing: 0.05em;
+      border-bottom: 1px solid var(--color-gold-light);
+      padding-bottom: 1px;
+    }
+    .news-card__link::after {
+      content: '→';
+      font-size: 0.75rem;
+    }
+    .news-card__link:hover {
+      opacity: 0.7;
+    }
+
+    /* ---- タグ別カラー ---- */
+    .tag--event   { border-color: #b8986a; color: #b8986a; }
+    .tag--nature  { border-color: #5a8a6a; color: #5a8a6a; }
+    .tag--cruise  { border-color: #6a7a9a; color: #6a7a9a; }
+    .tag--activity { border-color: #9a6a6a; color: #9a6a6a; }
+
+    /* ---- レスポンシブ ---- */
+    @media (max-width: 640px) {
+      .news-card {
+        grid-template-columns: 1fr;
+        gap: 12px;
+      }
+      .news-card__date {
+        display: flex;
+        align-items: baseline;
+        gap: 8px;
+        text-align: left;
+        padding-top: 0;
+      }
+      .news-card__date-month { margin-bottom: 0; }
+      .news-card__date-day   { font-size: 1.4rem; }
+      .news-card__date-year  { margin-top: 0; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ヘッダー -->
+  <header class="site-header" id="site-header">
+    <div class="header-inner">
+      <a href="index.html" class="site-logo">
+        <span class="site-logo__en">SHIMA NO IE</span>
+        <span class="site-logo__jp">島 の 家</span>
+      </a>
+      <nav class="site-nav">
+        <a href="concept.html">コンセプト</a>
+        <a href="facility.html">施設紹介</a>
+        <a href="stay-info.html">宿泊情報</a>
+        <a href="access.html">アクセス</a>
+        <a href="news.html" style="color:var(--color-gold);">奄美ニュース</a>
+        <a href="about.html">運営者情報</a>
+        <a href="contact.html" class="nav-cta">予約・お問い合わせ</a>
+      </nav>
+      <button class="hamburger" id="hamburger" aria-label="メニューを開く">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- モバイルナビ -->
+  <nav class="mobile-nav" id="mobile-nav">
+    <a href="concept.html">コンセプト</a>
+    <a href="facility.html">施設紹介</a>
+    <a href="stay-info.html">宿泊情報</a>
+    <a href="access.html">アクセス</a>
+    <a href="news.html">奄美ニュース</a>
+    <a href="about.html">運営者情報</a>
+    <a href="contact.html">予約・お問い合わせ</a>
+  </nav>
+
+  <!-- ページヘッダー -->
+  <div class="news-hero">
+    <span class="news-hero__label">Amami Tourism News</span>
+    <h1 class="news-hero__title">奄美ニュース</h1>
+    <p class="news-hero__sub">世界自然遺産の島から、旬な観光情報をお届けします</p>
+  </div>
+
+  <!-- ニュース本体 -->
+  <section class="section">
+    <div class="container">
+
+      <!-- ================================================================
+           2026年3月 第1週
+           ================================================================ -->
+      <div class="news-week fade-in">
+        <div class="news-week__heading">
+          <h2>2026年3月 第1週</h2>
+        </div>
+
+        <div class="news-list">
+
+          <!-- ニュース 1 -->
+          <div class="news-card">
+            <div class="news-card__date">
+              <span class="news-card__date-month">MAR</span>
+              <span class="news-card__date-day">08</span>
+              <span class="news-card__date-year">2026</span>
+            </div>
+            <div class="news-card__body">
+              <span class="news-card__tag tag--event">イベント</span>
+              <p class="news-card__title">奄美パーク春祭り「サンガツサンチ」開催 — 島の音楽と文化を一日楽しむ</p>
+              <p class="news-card__summary">3月8日（日）13:30より奄美パークにて春祭り「サンガツサンチ」が開催。島唄や三線ライブをはじめ、食や工芸の出店も並ぶ。入場無料。</p>
+              <a class="news-card__link" href="https://www.amami-tourism.org/event/" target="_blank" rel="noopener">あまみの イベント情報</a>
+            </div>
+          </div>
+
+          <!-- ニュース 2 -->
+          <div class="news-card">
+            <div class="news-card__date">
+              <span class="news-card__date-month">MAR</span>
+              <span class="news-card__date-day">11</span>
+              <span class="news-card__date-year">2026</span>
+            </div>
+            <div class="news-card__body">
+              <span class="news-card__tag tag--cruise">クルーズ</span>
+              <p class="news-card__title">豪華客船「飛鳥Ⅲ」が名瀬港に寄港 — 大型クルーズ観光が本格化</p>
+              <p class="news-card__summary">3月11日（水）、国内最大級の豪華客船「飛鳥Ⅲ」が名瀬港へ寄港予定。奄美を訪れるクルーズ観光客が増加傾向にあり、島全体の賑わいが期待される。</p>
+              <a class="news-card__link" href="https://www.pref.kagoshima.jp/aq01/chiiki/oshima/chiiki/zeniki/oshirase/gyoji.html" target="_blank" rel="noopener">鹿児島県 奄美群島イベント情報</a>
+            </div>
+          </div>
+
+          <!-- ニュース 3 -->
+          <div class="news-card">
+            <div class="news-card__date">
+              <span class="news-card__date-month">MAR</span>
+              <span class="news-card__date-day">07</span>
+              <span class="news-card__date-year">2026</span>
+            </div>
+            <div class="news-card__body">
+              <span class="news-card__tag tag--activity">アクティビティ</span>
+              <p class="news-card__title">ホエールウォッチング シーズン終盤 — ザトウクジラ遭遇率95%以上</p>
+              <p class="news-card__summary">1〜3月がベストシーズンのザトウクジラ観察ツアー。奄美沖に回遊する親子クジラをクルーザーで間近に観察できる。シーズン残りわずかのため、予約はお早めに。</p>
+              <a class="news-card__link" href="https://amamitabi.com/whale-watching-tours/" target="_blank" rel="noopener">奄美旅 ホエールウォッチング完全ガイド</a>
+            </div>
+          </div>
+
+        </div><!-- /news-list -->
+      </div><!-- /news-week -->
+
+      <!-- ================================================================
+           ここより上に新しい週を追加していく
+           ================================================================ -->
+
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section section--gray">
+    <div class="container" style="text-align:center;">
+      <div class="fade-in">
+        <span class="section-label">Stay with Us</span>
+        <h2 class="section-title" style="margin-bottom:16px;">島の旬を、ヴィラで体感する。</h2>
+        <p class="section-subtitle" style="margin-bottom:36px;">
+          「島の家」に滞在しながら、奄美の今を楽しみませんか。<br>
+          ご旅行の時期に合わせたアクティビティもご相談いただけます。
+        </p>
+        <a href="contact.html" class="btn btn--dark">予約・お問い合わせ</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- フッター -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <div class="footer-brand__logo">
+            <span class="footer-brand__en">SHIMA NO IE</span>
+            <span class="footer-brand__jp">島 の 家</span>
+          </div>
+          <p class="footer-brand__text">
+            奄美大島の自然に囲まれた<br>
+            完全プライベートのヴィラ
+          </p>
+        </div>
+        <div class="footer-nav">
+          <p class="footer-nav__title">Navigation</p>
+          <div class="footer-nav__links">
+            <a href="concept.html">コンセプト</a>
+            <a href="facility.html">施設紹介</a>
+            <a href="stay-info.html">宿泊情報</a>
+            <a href="access.html">アクセス</a>
+            <a href="news.html">奄美ニュース</a>
+            <a href="contact.html">予約・お問い合わせ</a>
+          </div>
+        </div>
+        <div class="footer-nav">
+          <p class="footer-nav__title">Information</p>
+          <div class="footer-nav__links">
+            <a href="about.html">運営者情報</a>
+            <a href="about.html#privacy">プライバシーポリシー</a>
+            <a href="about.html#law">特定商取引法に基づく表記</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <small>&copy; 2025 SHIMA NO IE. All Rights Reserved.</small>
+        <a href="about.html">運営者情報</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
