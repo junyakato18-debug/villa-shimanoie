@@ -69,9 +69,6 @@
       gap: 20px;
     }
     .news-card {
-      display: grid;
-      grid-template-columns: 90px 1fr;
-      gap: 20px;
       padding: 20px;
       background: var(--color-white);
       border: 1px solid var(--color-border);
@@ -80,32 +77,6 @@
     }
     .news-card:hover {
       box-shadow: var(--shadow);
-    }
-    .news-card__date {
-      text-align: center;
-      padding-top: 4px;
-    }
-    .news-card__date-month {
-      display: block;
-      font-family: var(--font-serif);
-      font-size: 0.75rem;
-      letter-spacing: 0.1em;
-      color: var(--color-gold);
-      margin-bottom: 2px;
-    }
-    .news-card__date-day {
-      display: block;
-      font-family: var(--font-serif);
-      font-size: 2rem;
-      font-weight: 300;
-      line-height: 1;
-      color: var(--color-text);
-    }
-    .news-card__date-year {
-      display: block;
-      font-size: 0.7rem;
-      color: #999;
-      margin-top: 4px;
     }
     .news-card__body {}
     .news-card__tag {
@@ -155,23 +126,6 @@
     .tag--cruise  { border-color: #6a7a9a; color: #6a7a9a; }
     .tag--activity { border-color: #9a6a6a; color: #9a6a6a; }
 
-    /* ---- レスポンシブ ---- */
-    @media (max-width: 640px) {
-      .news-card {
-        grid-template-columns: 1fr;
-        gap: 12px;
-      }
-      .news-card__date {
-        display: flex;
-        align-items: baseline;
-        gap: 8px;
-        text-align: left;
-        padding-top: 0;
-      }
-      .news-card__date-month { margin-bottom: 0; }
-      .news-card__date-day   { font-size: 1.4rem; }
-      .news-card__date-year  { margin-top: 0; }
-    }
   </style>
 </head>
 <body>
@@ -232,47 +186,26 @@
 
           <!-- ニュース 1 -->
           <div class="news-card">
-            <div class="news-card__date">
-              <span class="news-card__date-month">MAR</span>
-              <span class="news-card__date-day">08</span>
-              <span class="news-card__date-year">2026</span>
-            </div>
-            <div class="news-card__body">
-              <span class="news-card__tag tag--event">イベント</span>
-              <p class="news-card__title">奄美パーク春祭り「サンガツサンチ」開催 — 島の音楽と文化を一日楽しむ</p>
-              <p class="news-card__summary">3月8日（日）13:30より奄美パークにて春祭り「サンガツサンチ」が開催。島唄や三線ライブをはじめ、食や工芸の出店も並ぶ。入場無料。</p>
-              <a class="news-card__link" href="https://www.amami-tourism.org/event/" target="_blank" rel="noopener">あまみの イベント情報</a>
-            </div>
+            <span class="news-card__tag tag--event">イベント</span>
+            <p class="news-card__title">奄美パーク春祭り「サンガツサンチ」開催 — 島の音楽と文化を一日楽しむ</p>
+            <p class="news-card__summary">3月8日（日）13:30より奄美パークにて春祭り「サンガツサンチ」が開催。島唄や三線ライブをはじめ、食や工芸の出店も並ぶ。入場無料。</p>
+            <a class="news-card__link" href="https://www.pref.kagoshima.jp/aq01/chiiki/oshima/chiiki/zeniki/oshirase/gyoji.html" target="_blank" rel="noopener">鹿児島県 奄美群島イベント情報</a>
           </div>
 
           <!-- ニュース 2 -->
           <div class="news-card">
-            <div class="news-card__date">
-              <span class="news-card__date-month">MAR</span>
-              <span class="news-card__date-day">11</span>
-              <span class="news-card__date-year">2026</span>
-            </div>
-            <div class="news-card__body">
-              <span class="news-card__tag tag--cruise">クルーズ</span>
-              <p class="news-card__title">豪華客船「飛鳥Ⅲ」が名瀬港に寄港 — 大型クルーズ観光が本格化</p>
-              <p class="news-card__summary">3月11日（水）、国内最大級の豪華客船「飛鳥Ⅲ」が名瀬港へ寄港予定。奄美を訪れるクルーズ観光客が増加傾向にあり、島全体の賑わいが期待される。</p>
-              <a class="news-card__link" href="https://www.pref.kagoshima.jp/aq01/chiiki/oshima/chiiki/zeniki/oshirase/gyoji.html" target="_blank" rel="noopener">鹿児島県 奄美群島イベント情報</a>
-            </div>
+            <span class="news-card__tag tag--cruise">クルーズ</span>
+            <p class="news-card__title">豪華客船「飛鳥Ⅲ」が名瀬港に寄港 — 大型クルーズ観光が本格化</p>
+            <p class="news-card__summary">3月11日（水）、国内最大級の豪華客船「飛鳥Ⅲ」が名瀬港へ寄港予定。奄美を訪れるクルーズ観光客が増加傾向にあり、島全体の賑わいが期待される。</p>
+            <a class="news-card__link" href="https://www.amami-tourism.org/event/" target="_blank" rel="noopener">あまみの イベント情報</a>
           </div>
 
           <!-- ニュース 3 -->
           <div class="news-card">
-            <div class="news-card__date">
-              <span class="news-card__date-month">MAR</span>
-              <span class="news-card__date-day">07</span>
-              <span class="news-card__date-year">2026</span>
-            </div>
-            <div class="news-card__body">
-              <span class="news-card__tag tag--activity">アクティビティ</span>
-              <p class="news-card__title">ホエールウォッチング シーズン終盤 — ザトウクジラ遭遇率95%以上</p>
-              <p class="news-card__summary">1〜3月がベストシーズンのザトウクジラ観察ツアー。奄美沖に回遊する親子クジラをクルーザーで間近に観察できる。シーズン残りわずかのため、予約はお早めに。</p>
-              <a class="news-card__link" href="https://amamitabi.com/whale-watching-tours/" target="_blank" rel="noopener">奄美旅 ホエールウォッチング完全ガイド</a>
-            </div>
+            <span class="news-card__tag tag--activity">アクティビティ</span>
+            <p class="news-card__title">ホエールウォッチング シーズン終盤 — ザトウクジラ遭遇率95%以上</p>
+            <p class="news-card__summary">1〜3月がベストシーズンのザトウクジラ観察ツアー。奄美沖に回遊する親子クジラをクルーザーで間近に観察できる。シーズン残りわずかのため、予約はお早めに。</p>
+            <a class="news-card__link" href="https://amamitabi.com/whale-watching-tours/" target="_blank" rel="noopener">奄美旅 ホエールウォッチング完全ガイド</a>
           </div>
 
         </div><!-- /news-list -->
